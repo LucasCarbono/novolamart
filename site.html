@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamart Pratas - Brincos, Colares e Anéis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            font-size: 12px;
+        }
+
+        header {
+            background-color: #003366; /* Azul escuro */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 20px;
+        }
+
+        .menu-btn, .search-btn {
+            position: absolute;
+            top: 20px;
+            background-color: #003366; /* Azul marinho */
+            color: #fff;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .menu-btn {
+            left: 20px;
+        }
+
+        .search-btn {
+            right: 20px;
+        }
+
+        nav {
+            display: none; /* O menu começa oculto */
+            background-color: #003366; /* Azul marinho */
+            color: #fff;
+            padding: 10px;
+            position: fixed;
+            top: 60px; /* Espaço abaixo do botão */
+            left: 0;
+            width: 200px;
+            height: 100%;
+            overflow: auto;
+        }
+
+        nav a {
+            display: block;
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-bottom: 1px solid #002244; /* Azul mais escuro para separadores */
+        }
+
+        nav a:hover {
+            background-color: #002244; /* Azul mais escuro no hover */
+        }
+
+        section {
+            margin-left: 220px; /* Espaço para o menu fixo à esquerda */
+            padding: 20px;
+        }
+
+        #inicio {
+            background-image: url('https://example.com/imagem-prata.jpg'); /* Substitua pela URL real da imagem */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        #inicio h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        #inicio p {
+            font-size: 24px;
+        }
+
+        #pesquisar {
+            display: none; /* O campo de pesquisa começa oculto */
+        }
+
+        #pesquisar h2, #pesquisar p {
+            color: #000; /* Preto */
+        }
+
+        #pesquisar input {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        #pesquisar button {
+            padding: 15px 20px;
+            background-color: #003366; /* Azul escuro */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #sobre {
+            background-color: #eee;
+            text-align: center;
+        }
+
+        #contato form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contato input, #contato textarea {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        #contato button {
+            padding: 15px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+        <button class="search-btn" onclick="toggleSearch()">🔍</button>
+        <h1>Lamart Pratas</h1>
+        <p>Brincos, Colares, Anéis e mais - Elegância e Qualidade em Prata</p>
+    </header>
+
+    <nav id="menu">
+        <a href="#inicio">Início</a>
+        <a href="#pesquisar">Pesquisar</a>
+        <a href="#sobre">Sobre Nós</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <section id="inicio">
+        <h1>Bem-vindo à Nossa Loja</h1>
+        <p>Encontre os melhores itens em prata para você ou para presentear quem ama.</p>
+    </section>
+
+    <section id="pesquisar">
+        <h2>Pesquisar Produtos</h2>
+        <p>Digite o que você está procurando:</p>
+        <input type="text" placeholder="Ex: anel de prata masculino, colar feminino...">
+        <button>Buscar</button>
+    </section>
+
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>Somos uma loja especializada em itens de prata, oferecendo qualidade e estilo para todos.</p>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <form>
+            <input type="text" placeholder="Seu Nome" required>
+            <input type="email" placeholder="Seu E-mail" required>
+            <textarea placeholder="Sua Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Lamart Pratas. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+
+        function toggleSearch() {
+            var searchSection = document.getElementById("pesquisar");
+            if (searchSection.style.display === "block") {
+                searchSection.style.display = "none";
+            } else {
+                searchSection.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
